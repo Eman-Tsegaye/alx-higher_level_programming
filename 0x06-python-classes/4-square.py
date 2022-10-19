@@ -10,15 +10,13 @@ class Square:
     def __init__(self, size=0):
         '''This method initializes this class and sets size'''
         self.__size = size
-
-    def area(self):
-        '''This method calculates and returns the area of a square'''
-        return (self.__size ** 2)
-
+    
+    @property
     def size(self):
         '''A getter method'''
         return self.__size
 
+    @size.setter
     def size(self, value):
         '''A setter method'''
         if (type(size) != int):
@@ -26,3 +24,7 @@ class Square:
         if (size < 0):
             raise ValueError('size must be >= 0')
         self.__size = value
+
+    def area(self):
+        '''This method calculates and returns the area of a square'''
+        return (self.__size ** 2)
